@@ -67,4 +67,15 @@
             android:text="CLOSE APP" />
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/bestScore"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="50dp"
+        android:gravity="center"
+        android:text="TOP SCORE"
+        android:textColor="@color/black"
+        android:textSize="40dp" />
+
 </LinearLayout>
