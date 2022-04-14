@@ -32,9 +32,10 @@ public class Game extends AppCompatActivity {
     int correctAnswer;
     int userScore = 0;
     int userLife = 3;
+    int countPressed = 0;
 
     CountDownTimer timer;
-    private static final long START_TIMER_IN_MILLIS = 30000;
+    private static final long START_TIMER_IN_MILLIS = 15000;
     Boolean timerRun;
     long time_left_in_millis = START_TIMER_IN_MILLIS;
 
@@ -59,7 +60,7 @@ public class Game extends AppCompatActivity {
         theLogicGame(operationMethod);
 
         submitButt.setOnClickListener(view -> {
-
+            countPressed += 1;
             userAnswer = Integer.valueOf(answerText.getText().toString());
 
             pauseTimer();
@@ -78,18 +79,20 @@ public class Game extends AppCompatActivity {
 
         });
 
-        nextButt.setOnClickListener(view -> {
+            nextButt.setOnClickListener(view -> {
+                if (countPressed > 0) {
+                    answerText.setText("");
+                    resetTimer();
+                    theLogicGame(operationMethod);
+                }
+            });
 
-            answerText.setText("");
-            resetTimer();
-            theLogicGame(operationMethod);
 
-
-        });
     }
 
     public void theLogicGame(String operation){
 
+        countPressed = 0;
         switch (operation){
             case "addition":
                 num1 = random.nextInt(100);
@@ -180,4 +183,17 @@ public class Game extends AppCompatActivity {
         time_left_in_millis = START_TIMER_IN_MILLIS;
         updateTimer();
     }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        finish();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        finish();
+    }
+
 }

@@ -57,9 +57,9 @@ public class Result extends AppCompatActivity {
         }
 
         topResult.setText(  "TOP SCORE" + "\n" +
-                            "1: " + topScore1 + "\n" +
-                            "2: " + topScore2 + "\n" +
-                            "3: " + topScore3 + "\n" );
+                            "1: \t " + topScore1 + "\n" +
+                            "2: \t" + topScore2 + "\n" +
+                            "3: \t" + topScore3 + "\n" );
 
 
 
