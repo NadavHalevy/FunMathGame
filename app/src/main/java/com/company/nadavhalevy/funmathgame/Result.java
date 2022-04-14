@@ -61,15 +61,6 @@ public class Result extends AppCompatActivity {
                             "2: \t" + topScore2 + "\n" +
                             "3: \t" + topScore3 + "\n" );
 
-
-
-
-
-
-
-
-
-
         newGameButt.setOnClickListener(view -> {
 
             Intent intent = new Intent(Result.this, MainActivity.class);
@@ -78,10 +69,6 @@ public class Result extends AppCompatActivity {
 
         });
 
-        finishButt.setOnClickListener(view -> {
-
-            finish();
-
-        });
+        finishButt.setOnClickListener(view -> finish());
     }
 }
